@@ -10,30 +10,35 @@ void Clicker::Click()
         
 
         if (GetAsyncKeyState(autoclicker_enable)) {
-            std::cout << "lol";
-           // autoclicker = true;
+            
+            autoclicker = true;
         }
         else if (GetAsyncKeyState(autoclicker_disable)) {
-            std::cout << "paska";
-            //autoclicker = false;
+            
+            autoclicker = false;
         }
-        else if (GetAsyncKeyState(configure)) {
+        else if (GetAsyncKeyState(configure) && autoclicker == false) {
+           
+            
             Clicker::Configure();
         }
-        else if (GetAsyncKeyState(speed)) {
+        else if (GetAsyncKeyState(speed) && autoclicker == false) {
             Clicker::Speed();
-            Clicker::Show_Click_Speed();
+            
         }
         else if (GetAsyncKeyState(exiit)) {
             exit = true;
         }
      
-       /* if (autoclicker = true) {
+        if (autoclicker == true) {
             mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
             Sleep(clicks);
             
-        }*/
+        }
+        else {
+
+        }
         
     }
 }
@@ -48,6 +53,7 @@ void Clicker::Speed() {
      float click;
      int click1;
     system("CLS");
+    std::cin.clear();
 	std::cout << "Enter clicks per second: " << std::endl;
 	std::cin >> click;
     
@@ -64,7 +70,7 @@ void Clicker::Speed() {
 
     Clicker::clicks = click;
     Clicker::Calc();
-
+    system("CLS");
     std::cout << "Autoclicker!" << std::endl;
     std::cout << " " << std::endl;
 }
@@ -117,6 +123,7 @@ void Clicker::Configure() {
         std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
     } while (!std::cin || answer != 6);
         system("CLS");
+        std::cout << "Autoclicker!" << std::endl;
 }
 
 void Clicker::Show_Click_Speed() {
