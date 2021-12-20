@@ -1,31 +1,38 @@
 #include "Clicker.h"
 
+// Undefining max function from Windows.h
 
-void Clicker::Click(int& time_pushed_down, int& time_between)
+
+void Clicker::Click()
 {
+    mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+    mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 
+    Sleep(clicks);
 }
 
-int Clicker::Calc(int &time_pushed_down, int &clicks) {
+int Clicker::Calc() {
 
-	&time_pushed_down;
+    sleep_time = 1000 / clicks;
 
 }
 
 void Clicker::Configure() {
-     float clicks;
-     int clicks1;
+     float click;
+     int click1;
     system("CLS");
 	std::cout << "Enter clicks per second: " << std::endl;
-	std::cin >> clicks;
-    clicks1 = clicks;
+	std::cin >> click;
+    
     // Check if user input correct
-    while (!std::cin || clicks <= 0 || clicks - clicks1 != 0) {
+    click1 = click;
+    while (!std::cin || click <= 0 || click - click1 != 0) {
         system("CLS");
         std::cout << "Enter clicks per second: " << std::endl;
         std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin >> clicks;
+        std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+        std::cin >> click;
     }
-    
+    Clicker::clicks = click;
+    Clicker::Calc();
 }

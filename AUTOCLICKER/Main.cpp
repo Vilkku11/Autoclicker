@@ -1,19 +1,19 @@
 #include <iostream>
-#include <windows.h>
 #include "Clicker.h"
+#include <Windows.h>
 
 
 
 int main() {
 
-	std::cout << " z on x off q to quit " << std::endl;
+	std::cout << "Autoclicker" << std::endl;
 
 	
 
 	char k = 'Z';
 	bool autoclicker = false;
 	bool exit = false;
-	/*
+	
 	while (exit == false) {
 
 		if (GetAsyncKeyState('Z')) {
@@ -32,17 +32,17 @@ int main() {
 			mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
 			mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 			
-			Sleep(0);
+			Sleep(0.1);
 			
 		}
 
 
 		
 	
-	}*/
+	}
 
-	Clicker testi;
-	testi.Configure();
+	
+	
 
 	return 0;
 }
