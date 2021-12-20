@@ -10,8 +10,7 @@ int main() {
 
 	
 
-	int time_pushed_down; 
-	int time_between;
+	
 	bool autoclicker = false;
 	bool exit = false;
 	

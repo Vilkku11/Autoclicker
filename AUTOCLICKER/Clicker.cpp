@@ -5,7 +5,7 @@ void Clicker::Click(int& time_pushed_down, int& time_between)
 
 }
 
-int Clicker::Calc() {
+int Clicker::Calc(int &time_pushed_down, int &time_between, int &clicks) {
 
 
 
