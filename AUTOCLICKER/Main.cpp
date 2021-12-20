@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include "Clicker.h"
 
 
 
@@ -9,7 +10,7 @@ int main() {
 
 	
 
-
+	
 	bool autoclicker = false;
 	bool exit = false;
 	
