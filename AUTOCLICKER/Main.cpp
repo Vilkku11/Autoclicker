@@ -10,10 +10,10 @@ int main() {
 
 	
 
-	
+	char k = 'Z';
 	bool autoclicker = false;
 	bool exit = false;
-	
+	/*
 	while (exit == false) {
 
 		if (GetAsyncKeyState('Z')) {
@@ -37,9 +37,12 @@ int main() {
 		}
 
 
+		
+	
+	}*/
 
-
-	}
+	Clicker testi;
+	testi.Configure();
 
 	return 0;
 }
