@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include "Clicker.h"
 
 
 
@@ -9,7 +10,8 @@ int main() {
 
 	
 
-
+	int time_pushed_down; 
+	int time_between;
 	bool autoclicker = false;
 	bool exit = false;
 	
